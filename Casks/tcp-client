@@ -1,0 +1,11 @@
+cask "tcp-client" do
+  version "0.2.11"
+  sha256 "a22cf85498e33682fb3179b259ed23d535e3bf95b965c7f3841cc5115ef2eeb9"
+
+  url "https://gitlab.com/kaidstor/tcp_client_tauri/-/releases/v#{version}/downloads/tcp-client.app.tar.gz"
+  name "Service Connect"
+  desc "TCP-клиент на Tauri"
+  homepage "https://gitlab.com/kaidstor/tcp_client_tauri"
+
+  app "tcp-client.app"
+end
