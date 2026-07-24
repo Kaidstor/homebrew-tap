@@ -18,17 +18,6 @@ cask "sql-kai" do
   app "sql-kai.app"
   binary "#{appdir}/sql-kai.app/Contents/MacOS/sql-kai-cli", target: "sql-kai"
 
-  caveats <<~EOS
-    sql-kai is signed with a development certificate and not notarized by Apple.
-    Install with --no-quarantine so Gatekeeper does not block the first launch:
-
-      brew install --no-quarantine kaidstor/tap/sql-kai
-
-    If it is already installed and blocked, clear the quarantine flag:
-
-      xattr -dr com.apple.quarantine /Applications/sql-kai.app
-  EOS
-
   zap trash: [
     "~/Library/Application Support/sql-kai",
     "~/Library/Caches/com.kaidstor.sql-kai",
