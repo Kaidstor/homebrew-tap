@@ -1,6 +1,6 @@
 cask "tcp-kai" do
-  version "1.3.5"
-  sha256 "137387b360220a0c476530267a44c5824d8c494c0a24ec2b6a158333266166db"
+  version "1.4.0"
+  sha256 "39437e9b14c017d6013264d432c084c2c2ef21e777fc1849dbdd68a815f036b0"
 
   url "https://github.com/Kaidstor/tcp-kai/releases/download/v#{version}/tcp-kai_#{version}_darwin-aarch64.dmg"
   name "tcp-kai"
@@ -17,6 +17,14 @@ cask "tcp-kai" do
 
   app "tcp-kai.app"
   binary "#{appdir}/tcp-kai.app/Contents/MacOS/tcp-kai-cli", target: "tcp-kai"
+
+  # разложить/догнать копии агентского скилла (~/.claude, ~/.codex) сразу при
+  # install/upgrade, не дожидаясь первого send; симлинки (dev) не трогает
+  postflight do
+    system_command "#{appdir}/tcp-kai.app/Contents/MacOS/tcp-kai-cli",
+                   args: ["skills", "install"],
+                   must_succeed: false
+  end
 
   zap trash: [
     "~/Library/Application Support/com.kaidstor.app",
