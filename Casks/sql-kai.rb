@@ -1,6 +1,6 @@
 cask "sql-kai" do
-  version "1.28.0"
-  sha256 "2e09b4dd2a21a641afb5c706f53075a45b42cdc8056833d32152c77b26ef60c5"
+  version "1.29.0"
+  sha256 "f91865035ace0da1f38347757c767ea66de8ae884acb39b6d11b3a59e3f6c20d"
 
   url "https://github.com/Kaidstor/sql-kai/releases/download/v#{version}/sql-kai_#{version}_darwin-aarch64.dmg"
   name "sql-kai"
@@ -17,6 +17,12 @@ cask "sql-kai" do
 
   app "sql-kai.app"
   binary "#{appdir}/sql-kai.app/Contents/MacOS/sql-kai-cli", target: "sql-kai"
+
+  postflight do
+    system_command "#{appdir}/sql-kai.app/Contents/MacOS/sql-kai-cli",
+                   args: ["skills", "install"],
+                   must_succeed: false
+  end
 
   zap trash: [
     "~/Library/Application Support/sql-kai",
