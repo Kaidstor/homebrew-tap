@@ -1,6 +1,6 @@
 cask "sec-app" do
-  version "0.3.0"
-  sha256 "2e0652383f3d8ab75a999513f48cc378bfd39a554aca2c80aa9087cada3268a0"
+  version "0.4.0"
+  sha256 "e21df18ee9d6b2d12e28f21afa6f5cfba2ec0cc95a1ad35eb1f5a44d987d091e"
 
   url "https://github.com/Kaidstor/sec/releases/download/app-v#{version}/sec-app_#{version}_darwin-aarch64.dmg"
   name "sec"
