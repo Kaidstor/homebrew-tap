@@ -12,7 +12,7 @@ cask "vault-kai" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "vault-kai.app"
   binary "#{appdir}/vault-kai.app/Contents/MacOS/vault-kai-cli", target: "vault-kai"
