@@ -7,11 +7,12 @@ cask "vault-kai" do
   # (если браузер открывает gitlab.rebrandy без предупреждения, он там есть).
   url "https://gitlab.rebrandy/tools/vault-kai/-/releases/v#{version}/downloads/vault-kai_#{version}_aarch64.dmg"
   name "vault-kai"
-  desc "Desktop and CLI client for the rebrandy HashiCorp Vault: service env documents per environment"
+  desc "Desktop and CLI client for service env documents in the rebrandy Vault"
   homepage "https://gitlab.rebrandy/tools/vault-kai"
 
   auto_updates true
   depends_on arch: :arm64
+  depends_on macos: ">= :big_sur"
 
   app "vault-kai.app"
   binary "#{appdir}/vault-kai.app/Contents/MacOS/vault-kai-cli", target: "vault-kai"
