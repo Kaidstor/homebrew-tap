@@ -20,10 +20,14 @@ cask "tcp-kai" do
 
   # разложить/догнать копии агентского скилла (~/.claude, ~/.codex) сразу при
   # install/upgrade, не дожидаясь первого send; симлинки (dev) не трогает
-  postflight do
-    system_command "#{appdir}/tcp-kai.app/Contents/MacOS/tcp-kai-cli",
-                   args: ["skills", "install"],
-                   must_succeed: false
+  postflight_steps do
+    run "{{appdir}}/tcp-kai.app/Contents/MacOS/tcp-kai-cli",
+        args:           ["skills", "install"],
+        env:            { "HOME" => "/Users/{{user}}" },
+        must_succeed:   false,
+        print_stdout:   true,
+        writable_paths: [".claude/skills", ".codex/skills"],
+        writable_base:  :home
   end
 
   zap trash: [

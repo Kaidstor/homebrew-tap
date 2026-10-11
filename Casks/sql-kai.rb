@@ -18,10 +18,14 @@ cask "sql-kai" do
   app "sql-kai.app"
   binary "#{appdir}/sql-kai.app/Contents/MacOS/sql-kai-cli", target: "sql-kai"
 
-  postflight do
-    system_command "#{appdir}/sql-kai.app/Contents/MacOS/sql-kai-cli",
-                   args: ["skills", "install"],
-                   must_succeed: false
+  postflight_steps do
+    run "{{appdir}}/sql-kai.app/Contents/MacOS/sql-kai-cli",
+        args:           ["skills", "install"],
+        env:            { "HOME" => "/Users/{{user}}" },
+        must_succeed:   false,
+        print_stdout:   true,
+        writable_paths: [".claude/skills", ".codex/skills"],
+        writable_base:  :home
   end
 
   zap trash: [

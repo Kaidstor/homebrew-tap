@@ -33,9 +33,9 @@ cask "finances-kai" do
 
   binary "finances-kai"
 
-  preflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/finances-kai"]
+  preflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/finances-kai"]
     end
   end
 

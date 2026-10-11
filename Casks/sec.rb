@@ -33,17 +33,24 @@ cask "sec" do
 
   binary "sec"
 
-  preflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/sec"]
+  preflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/sec"]
     end
   end
 
-  postflight do
-    if OS.mac?
-      system_command "#{staged_path}/sec", args: ["skills", "install"], must_succeed: false
+  postflight_steps do
+    on_macos do
+      run "{{staged_path}}/sec",
+          args:           ["skills", "install"],
+          env:            { "HOME" => "/Users/{{user}}" },
+          must_succeed:   false,
+          print_stdout:   true,
+          writable_paths: [".claude/skills", ".codex/skills"],
+          writable_base:  :home
     end
   end
+
   generate_completions_from_executable "sec",
     base_name: "sec",
     shell_parameter_format: :cobra,
