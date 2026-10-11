@@ -4,7 +4,7 @@ cask "sec-app" do
 
   url "https://github.com/Kaidstor/sec/releases/download/app-v#{version}/sec-app_#{version}_darwin-aarch64.dmg"
   name "sec"
-  desc "Desktop client for the sec secrets manager (search, copy via CLI, share links and packs)"
+  desc "Desktop client for the sec secrets manager: search, copy and share links"
   homepage "https://github.com/Kaidstor/sec"
 
   livecheck do
@@ -13,6 +13,7 @@ cask "sec-app" do
 
   depends_on arch: :arm64
   depends_on cask: "sec"
+  depends_on :macos
 
   app "sec.app"
 

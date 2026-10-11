@@ -24,7 +24,7 @@ cask "sec" do
   end
 
   name "sec"
-  desc "Локальный менеджер секретов для безопасной работы с агентами (значения не попадают в argv/историю/чат)"
+  desc "Локальный менеджер секретов: значения не попадают в argv, историю и чат"
   homepage "https://github.com/kaidstor/sec"
 
   livecheck do
@@ -32,6 +32,10 @@ cask "sec" do
   end
 
   binary "sec"
+  generate_completions_from_executable "sec",
+                                       base_name:              "sec",
+                                       shell_parameter_format: :cobra,
+                                       shells:                 [:bash, :zsh, :fish]
 
   preflight_steps do
     on_macos do
@@ -50,11 +54,6 @@ cask "sec" do
           writable_base:  :home
     end
   end
-
-  generate_completions_from_executable "sec",
-    base_name: "sec",
-    shell_parameter_format: :cobra,
-    shells: [:bash, :zsh, :fish]
 
   # No zap stanza required
 end

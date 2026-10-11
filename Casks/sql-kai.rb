@@ -4,7 +4,7 @@ cask "sql-kai" do
 
   url "https://github.com/Kaidstor/sql-kai/releases/download/v#{version}/sql-kai_#{version}_darwin-aarch64.dmg"
   name "sql-kai"
-  desc "Desktop Postgres client with SSH tunnels, encrypted vault and a CLI twin for AI agents"
+  desc "Postgres client with SSH tunnels, encrypted vault and a CLI for AI agents"
   homepage "https://github.com/Kaidstor/sql-kai"
 
   livecheck do
@@ -14,6 +14,7 @@ cask "sql-kai" do
 
   auto_updates true
   depends_on arch: :arm64
+  depends_on :macos
 
   app "sql-kai.app"
   binary "#{appdir}/sql-kai.app/Contents/MacOS/sql-kai-cli", target: "sql-kai"

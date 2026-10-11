@@ -24,7 +24,7 @@ cask "figma-kai" do
   end
 
   name "figma-kai"
-  desc "Макеты Figma из терминала: PNG экрана по ссылке и дерево слоёв с размерами, цветами и текстом"
+  desc "Макеты Figma из терминала: PNG экрана и дерево слоёв с размерами"
   homepage "https://github.com/Kaidstor/figma-kai"
 
   livecheck do

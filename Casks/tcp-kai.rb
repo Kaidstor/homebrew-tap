@@ -14,6 +14,7 @@ cask "tcp-kai" do
 
   auto_updates true
   depends_on arch: :arm64
+  depends_on :macos
 
   app "tcp-kai.app"
   binary "#{appdir}/tcp-kai.app/Contents/MacOS/tcp-kai-cli", target: "tcp-kai"

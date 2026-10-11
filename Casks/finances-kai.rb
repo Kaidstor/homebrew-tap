@@ -24,7 +24,7 @@ cask "finances-kai" do
   end
 
   name "finances-kai"
-  desc "CLI для учёта доходов и расходов: платежи, шаблоны, чеки, сводка и экспорт счетов из терминала"
+  desc "Учёт доходов и расходов из терминала: платежи, шаблоны, чеки и сводки"
   homepage "https://github.com/Kaidstor/finances-kai"
 
   livecheck do
