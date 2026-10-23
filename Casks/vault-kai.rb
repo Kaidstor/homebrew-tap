@@ -1,6 +1,6 @@
 cask "vault-kai" do
-  version "0.3.1"
-  sha256 "298161ded363c325757eb0b945072a53d6ef194f99c10ebd0f04462c9d5251ea"
+  version "0.3.2"
+  sha256 "ec4b5b2fdf084202ce4f6a85d6f3f06be0d20701faa0deb0dde4f157644ed88e"
 
   # Релизы лежат в корпоративном GitLab: ставится только из VPN, а сертификат
   # gitlab.rebrandy подписан внутренним CA, который должен быть в связке ключей
