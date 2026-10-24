@@ -1,6 +1,6 @@
 cask "tcp-kai" do
-  version "1.5.1"
-  sha256 "62ebfcfbd8815953129e8da0531b8507a9d1341b48adbc7cbccd55ce857cbea0"
+  version "1.5.2"
+  sha256 "20d850f30d7aa4b488a8645d0537b9d41a036fc536c4474fdc24e9fd5c5e634a"
 
   url "https://github.com/Kaidstor/tcp-kai/releases/download/v#{version}/tcp-kai_#{version}_darwin-aarch64.dmg"
   name "tcp-kai"
