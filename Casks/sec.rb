@@ -18,25 +18,25 @@ cask "sec" do
     end
   end
 
-  version "1.3.0"
+  version "1.3.1"
 
   on_macos do
     on_arm do
-      sha256 "3a893838a70244e833e836c3e584b6cae6f91d8d9a1b17f7360f0fbcaebe3623"
+      sha256 "28aa18af3965b72ee87e15ac686c0764514e51db81e1ebd69ab0fc15bcb85b34"
       url "https://github.com/Kaidstor/sec/releases/download/v#{version}/sec_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "63f44fe889d3068af86f4d71def308db418ea5963d0e0753ba4143f1ffbedb4d"
+      sha256 "9aebd685e40c4a229c969488d0aeab5c9cebd6eb2c63db567e568ff40e4ed360"
       url "https://github.com/Kaidstor/sec/releases/download/v#{version}/sec_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "e07fe94eafa118c6c84eaa1c55cb211eb3ec0f0b07eff9760e0275517f7059d0"
+      sha256 "af3748aed6a49e38551b66d656a4ffa3a141c3f6c10bdf725a50c2f306bed36e"
       url "https://github.com/Kaidstor/sec/releases/download/v#{version}/sec_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "1eda44a2c05b4bb1998df001edab915c659fed961e034c563dc7832a905d18f4"
+      sha256 "1e79a365cfe32d89c56b9757597eae3bdcf747ecfe569d9fdc4b45144df871dc"
       url "https://github.com/Kaidstor/sec/releases/download/v#{version}/sec_#{version}_linux_amd64.tar.gz"
     end
   end
