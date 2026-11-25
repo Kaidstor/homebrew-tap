@@ -1,6 +1,6 @@
 cask "sql-kai" do
   version "1.33.3"
-  sha256 "a0c8d779d0f3a60612bd362cd3c73f523ab69e4ed34d53c8a7a8b78327e32333"
+  sha256 "39fdaf1f01bce04eb79bbc5f2da06dbc252f13e2ab525e151dbc913c90f4e86f"
 
   url "https://github.com/Kaidstor/sql-kai/releases/download/v#{version}/sql-kai_#{version}_darwin-aarch64.dmg"
   name "sql-kai"
